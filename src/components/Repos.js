@@ -49,7 +49,7 @@ export default function Repos() {
       <div className=' mx-auto relative my-10 '>
         {myPosts.slice(skip, skip + perDisplay ).map((post , i)=>{
           return(
-            <div key={i} className='md:w-[500px] w-80 mx-4 h-72 shadow-2xl rounded-lg px-20 py-8 bg-pink-200'>
+            <div key={i} className='md:w-[500px] w-80 mx-4 h-96 shadow-2xl rounded-lg px-20 py-8 bg-pink-200'>
               <h1 className='text-3xl '>{post.name} </h1>
               <h1 className='text-xl mb-5'>{post.description}</h1>
               <a href={post.html_url} className=' bg-pink-600 py-3 px-1 rounded-lg font-semibold text-white'>Link to Repo</a>
@@ -63,12 +63,12 @@ export default function Repos() {
           <AiOutlineDoubleLeft className='text-4xl text-pink-600 mx-4 cursor-pointer'/>
         </div>
       </div>
-      <div className='flex mx-auto items-center'>
+      <div className='flex mx-auto items-center justify-center w-44'>
         {myPosts.map((post, i)=>{
           const active = i + 1 === display ? 'text-pink-600 ' : 'text-pink-200 text-lg'
           return(
             <div key={i} className='flex flex-row'>
-              <RxDotFilled onClick={()=>ClickDot(i + 1 )} className={`text-2xl ${active}`} />
+              <RxDotFilled onClick={()=>ClickDot(i + 1 )} className={`text-xl ${active}`} />
 
             </div>
           )
