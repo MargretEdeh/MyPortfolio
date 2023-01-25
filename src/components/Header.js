@@ -16,33 +16,46 @@ export default function Header() {
     Aos.init({duration:2000})
   })
   const [show, setShow] = React.useState(false);
+  const toogle = () => {
+    setShow(!show);
+  }
   const menu = <FiMenu className="md:hidden text-3xl mr-3 text-pink-700" />;
   const close = <FaTimes className="md:hidden text-3xl mr-3 text-pink-700" />;
   return (
     <div data-aos="fade-down" className=" py-3 flex flex-col-reverse  md:flex md:flex-row md:items-center  md:justify-between">
       <div>
         <ul
-          className={`md:flex md:items-center bg-white absolute md:static  md:z-auto w-full md:bg-white  left-0 transition-all ease-in duration-300 opacity-90 ${
+          className={`md:flex font-medium md:items-center bg-white absolute md:static  md:z-auto w-full md:bg-white  left-0 transition-all ease-in duration-300 opacity-90 ${
             show ? "top-24" : "top-[-300px] "
           }  `}
         >
-          <li className="py-2 px-5 md:my-0 my-4">
+          <li className="py-2 px-5 md:my-0 my-4 hidden">
             <Link className="duration-500" to="/">
               Home
             </Link>
           </li>
-          <li className="py-2 px-5 md:my-0 my-4">
-            <Link className="duration-500" to="#about" smooth>
+          <li className="py-2 px-5 md:my-0 my-4 hover:bg-pink-300 md:rounded-xl ">
+            <Link className="duration-500" to="#about"  onClick={toogle} >
               About Me
             </Link>
           </li>
-          <li className="py-2 px-5 md:my-0 my-4">
-            <Link className="duration-500" to="#project" smooth>
+          <li className="py-2 px-5 md:my-0 my-4  hover:bg-pink-300 md:rounded-xl ">
+            <Link className="duration-500" to="#project"  onClick={toogle}>
               Projects
             </Link>
           </li>
+          <li className="py-2 px-5 md:my-0 my-4  hover:bg-pink-300 md:rounded-xl ">
+            <Link className="duration-500" to="#blog"  onClick={toogle}>
+              Blog
+            </Link>
+          </li>
+          <li className="py-2 px-5 md:my-0 my-4  hover:bg-pink-300 md:rounded-xl ">
+            <Link className="duration-500" to="#repos"  onClick={toogle}>
+              Repos
+            </Link>
+          </li>
           <li>
-            <button onClick={toogleContact} className="p-4 bg-gradient-to-r from-pink-600 to-pink-900 rounded-xl text-white font-semibold md:hidden ">
+            <button onClick={toogleContact} className="p-4 mx-3 mb-5 bg-gradient-to-r from-pink-600 to-pink-900 rounded-xl text-white font-semibold md:hidden ">
               Contact Me
             </button>
           </li>
@@ -56,7 +69,7 @@ export default function Header() {
         </div>
         <span>
           <button onClick={() => setShow(!show)} className="md:hidden">
-            {show ? menu : close}{" "}
+            {show ? close : menu}{" "}
           </button>
         </span>
       </div>

@@ -1,79 +1,58 @@
-import React, { useEffect,useState } from 'react'
- import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from 'react-icons/ai'
- import {RxDotFilled} from 'react-icons/rx'
+import React, { useEffect, useState } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 export default function Blog() {
-  const [myPosts, setMyPosts] = useState([])
-  const [display , setDisplay]=useState(1)
-  const total = myPosts.length
-  const perDisplay = 1
-  const totalDisplay = Math.ceil(total/perDisplay)
-  const skip = display * perDisplay - perDisplay
-  const nextDisplay=()=>{
-    if(display < totalDisplay){
-      setDisplay(display + 1)
-    }
-    else{
-      setDisplay(1)
+    useEffect(()=>{
+        Aos.init({duration: 2000})
+    })
+    const [myBlog, setMyBlog] = useState([])
+    const query = `
+    query {
+        user(username:"margretedeh"){
+          publication{
+            posts(page:0){
+              title
+              brief
+              slug
+              coverImage
+            }
+          }
         }
-  
-  }
-  const prevDisplay=()=>{
-    if(display > 1){
-      setDisplay(display - 1)
-    }
-    else{
-      setDisplay(totalDisplay)
-    }
-  }
-  const ClickDot=(i)=>{
-    setDisplay(i)
-  }
-
-  async function getPosts(){
-    const response = await fetch('https://api.github.com/users/MargretEdeh/repos')
-    const data = await response.json()
-    setMyPosts(data)
-  }
-  useEffect(()=>{
-    getPosts()
-  },[])
-  return (
-    <div className='flex flex-col w-full '>
-     <div className='mx-auto'> <h1 className='md:text-4xl text-2xl font-semibold text-slate-900'> List of GitHub Repos </h1></div>
-      <div className=' mx-auto relative my-10 '>
-        {myPosts.slice(skip, skip + perDisplay ).map((post , i)=>{
-          return(
-            <div key={i} className='md:w-[500px] w-[300px] h-72 shadow-2xl rounded-lg px-20 py-8 bg-pink-200'>
-              <h1 className='text-3xl '>{post.name} </h1>
-              <h1 className='text-xl mb-5'>{post.description}</h1>
-              <a href={post.html_url} className=' bg-pink-600 py-3 px-1 rounded-lg font-semibold text-white'>Link to Repo</a>
-            </div>
-          )
-        })}
-        <div onClick={nextDisplay} className='top-[50%] opacity-40  absolute right-0 -translate-x-0 translate-y-[-50%]  '>
-          <AiOutlineDoubleRight className='text-4xl text-pink-600 mx-4 cursor-pointer '/>
-        </div>
-        <div onClick={prevDisplay} className='absolute  top-[50%] -left-2 opacity-40 -translate-x-0 translate-y-[-50%] '>
-          <AiOutlineDoubleLeft className='text-4xl text-pink-600 mx-4 cursor-pointer'/>
-        </div>
-      </div>
-      <div className='flex mx-auto items-center'>
-        {myPosts.map((post, i)=>{
-          const active = i + 1 === display ? 'text-pink-600 ' : 'text-pink-200 text-lg'
-          return(
-            <div key={i} className='flex flex-row'>
-              <RxDotFilled onClick={()=>ClickDot(i + 1 )} className={`text-2xl ${active}`} />
-
-            </div>
-          )
-        })}
-      </div>
         
+      }
+    `
+    useEffect(()=>{
+       FetchPosts()
+    },[])
+
+    const FetchPosts=async()=>{
+        const res= await fetch('https://api.hashnode.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({query}),
+        })
+        const data = await res.json()
+        setMyBlog(data.data.user.publication.posts)
+    }
+  return (
+    <div data-aos="fade-right" id='blog' >
+        <h1 className='text-5xl font-bold text-center text-slate-900 '>My Blog</h1>
+        <div className='mx-auto flex flex-col md:flex-row' >
+            {myBlog.map((post, i )=>{
+                return(
+                    <div className='md:w-[500px] w-96 my-10 md:my-20 mx-auto bg-pink-200 shadow-2xl px-10 py-10' key={i}>
+                        <img className='w-96 max-w-full h-auto' src={post.coverImage} alt=""/>
+                        <h1 className='text-2xl font-semibold text-slate-800' >{post.title}</h1>
+                        <p className='text-lg py-4'>{post.brief}</p>
+                        <a href={`https://margretedeh.hashnode.dev/${post.slug}`} className='bg-pink-600 py-3 px-2 rounded-lg font-semibold text-white'>Read More</a>
+                    </div>
+                )
+            })}
+        </div>
+      
     </div>
   )
 }
-
-
-// AiOutlineDoubleRight
-// AiOutlineDoubleLeft

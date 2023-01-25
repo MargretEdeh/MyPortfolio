@@ -13,7 +13,7 @@ import Aos from "aos"
     })
     return (
       <div  id='project' data-aos="fade-right"> 
-          <h1 className=' text-4xl md:text-6xl font-bold text-slate-900' id='#services' smooth >Latest Projects</h1>
+          <h1 className=' text-4xl mx-4 md:text-6xl font-bold text-slate-900' id='#services' smooth >Latest Projects</h1>
           <div className='flex flex-col md:flex-row py-20 '>
           <EachProject src={DecArc2} name="Developer's Arc" link="https://my-exam-project-ruby.vercel.app/" number="1" className="w-96 p-3 md:hover:p-5" />
           <EachProject src={Todo} name="Todo App" number="2" link="https://vue-d3nvpi.stackblitz.io" className="w-96 mb-10 p-3 h-56 border border-slate-200 md:mt-20 md:hover:p-5 " />

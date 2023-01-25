@@ -7,7 +7,7 @@ export default function AboutMe() {
     Aos.init({duration: 2000})
     }, [])
   return (
-    <div id="about" className="flex flex-col md:flex-row  md:my-20 " data-aos="fade-down">
+    <div id="about" className="flex flex-col md:flex-row mx-4  md:my-20 " data-aos="fade-down">
       <h1 className="md:pl-5 text-4xl mx-auto  md:w-3/4 md:text-7xl text-slate-600 font-bold">About Me</h1>
       <div className="w-1 h-96 bg-slate-400 rounded-md hidden md:flex " ></div>
       <h1 className=" text-xl mx-auto italic text-center py-10 md:w-2/3 md:px-20 text-slate-600 ">

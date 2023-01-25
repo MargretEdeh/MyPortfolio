@@ -6,6 +6,7 @@ const Projects = lazy(() => import("./components/Projects"));
 const AboutMe = lazy(() => import("./components/AboutMe"));
 const Footer = lazy(() => import("./components/Footer"));
 const Blog = lazy(() => import("./components/Blog"));
+const Repos = lazy(() => import("./components/Repos"));
 
 // import Header from './components/Header';
 // import Home from './components/Home';
@@ -29,6 +30,7 @@ function App() {
         <AboutMe />
         <Projects />
         <Blog />
+        <Repos />
         <Footer />
       </Suspense>
     </div>
