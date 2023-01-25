@@ -49,7 +49,7 @@ export default function Repos() {
       <div className=' mx-auto relative my-10 '>
         {myPosts.slice(skip, skip + perDisplay ).map((post , i)=>{
           return(
-            <div key={i} className='md:w-[500px] w-96 h-72 shadow-2xl rounded-lg px-20 py-8 bg-pink-200'>
+            <div key={i} className='md:w-[500px] w-80 mx-4 h-72 shadow-2xl rounded-lg px-20 py-8 bg-pink-200'>
               <h1 className='text-3xl '>{post.name} </h1>
               <h1 className='text-xl mb-5'>{post.description}</h1>
               <a href={post.html_url} className=' bg-pink-600 py-3 px-1 rounded-lg font-semibold text-white'>Link to Repo</a>

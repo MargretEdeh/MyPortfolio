@@ -43,7 +43,7 @@ export default function Blog() {
         <div className='mx-auto flex flex-col md:flex-row' >
             {myBlog.map((post, i )=>{
                 return(
-                    <div className='md:w-[500px] w-96 my-10 md:my-20 mx-auto bg-pink-200 shadow-2xl px-10 py-10' key={i}>
+                    <div className='md:w-[500px] w-80  my-10 md:my-20 mx-auto items-center justify-center bg-pink-200 shadow-2xl px-10 py-10' key={i}>
                         <img className='w-96 max-w-full h-auto' src={post.coverImage} alt=""/>
                         <h1 className='text-2xl font-semibold text-slate-800' >{post.title}</h1>
                         <p className='text-lg py-4'>{post.brief}</p>
