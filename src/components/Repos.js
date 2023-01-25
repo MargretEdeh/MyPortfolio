@@ -63,11 +63,11 @@ export default function Repos() {
           <AiOutlineDoubleLeft className='text-4xl text-pink-600 mx-4 cursor-pointer'/>
         </div>
       </div>
-      <div className='flex'>
+      <div className='flex mx-auto'>
         {myPosts.map((post, i)=>{
-          const active = i + 1 === display ? 'text-pink-600 ' : 'text-pink-200 text-lg'
+          const active = i + 1 === display ? 'text-pink-600 ' : 'text-pink-200 text-sm'
           return(
-            <div key={i} className='flex flex-row'>
+            <div key={i} className=''>
               <RxDotFilled onClick={()=>ClickDot(i + 1 )} className={`text-xl ${active}`} />
 
             </div>
