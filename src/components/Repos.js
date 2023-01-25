@@ -63,7 +63,7 @@ export default function Repos() {
           <AiOutlineDoubleLeft className='text-4xl text-pink-600 mx-4 cursor-pointer'/>
         </div>
       </div>
-      <div className='flex mx-auto items-center justify-center w-44'>
+      <div className='flex'>
         {myPosts.map((post, i)=>{
           const active = i + 1 === display ? 'text-pink-600 ' : 'text-pink-200 text-lg'
           return(
