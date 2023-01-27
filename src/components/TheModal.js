@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 
 export default function TheModal({showContact}) {
   const theRef = useRef()
+  const [sucess, setSucess] = useState(false)
   const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -33,6 +34,7 @@ export default function TheModal({showContact}) {
         setTheErrors(validate(formData))
         console.log('form submitted')
         // theRef.current.reset()
+        setSucess(true)
         setFormData({
           name: '',
           email: '',
@@ -44,6 +46,9 @@ export default function TheModal({showContact}) {
   return (
     <div className='fixed w-full z-[50] h-screen font-semibold bg-pink-600 opacity-90 top-0 -ml-0 md:-ml-6'>
         <FaTimes onClick={showContact} className='text-4xl text-slate-900 m-10 hover:text-5xl' />
+    <div>
+      {sucess && <p className='text-slate-900 font-semibold text-center'>Thank you for your message!! </p>}
+    </div>
      <form  onSubmit={SubmitForm} className='flex flex-col m-10 md:w-1/2 md:mx-auto my-10'  >
         <label htmlFor='name' className='text-white'>Name</label>
        <p className='text-slate-900 font-semibold' >{theErrors.name} </p>
