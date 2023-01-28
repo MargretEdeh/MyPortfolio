@@ -75,13 +75,11 @@ export default function TheModal({ showContact }) {
         onClick={showContact}
         className="text-4xl text-slate-900 m-10 hover:text-5xl"
       />
-      <div>
-        {sucess && (
-          <p className="text-slate-900 font-semibold text-center">
-            Thank you for your message!!{" "}
-          </p>
-        )}
-      </div>
+    
+    {sucess ? (<div className="text-center" >  <h1 className="text-4xl text-slate-900" >Thank You!! for your Message!!</h1> </div>)
+    :
+
+  
       <form
         ref={theRef}
         onSubmit={SubmitForm}
@@ -131,7 +129,7 @@ export default function TheModal({ showContact }) {
         >
           Submit
         </button>
-      </form>
+      </form>}
     </div>
   );
 }
