@@ -16,7 +16,7 @@ const Repos = lazy(() => import("./components/Repos"));
 // import Blog from './components/Blog';
 function App() {
   return (
-    <div className=" container mx-auto ">
+    <div className="  mx-auto max-w-full  ">
       <Suspense
         fallback={
           <div>

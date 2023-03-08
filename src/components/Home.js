@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import Tools from "./Tools";
+import mag from "../assets/mag.jpg"
+import mag2 from "../assets/mag2.jpg"
+
 import 'aos/dist/aos.css';
 import Aos from "aos"
 // import { FaReact } from 'react-icons/fa';
@@ -23,8 +26,8 @@ export default function Home() {
             ease-out duration-500"  bg-pink-600 h-44 rounded-xl md:rotate-12 shadow-xl'
       >
         <img
-          className="max-w-full h-auto w-32 md:w-60 md:my-10  mx-auto my-6 "
-          src="https://scontent.fabv3-1.fna.fbcdn.net/v/t39.30808-6/320575675_492531326372097_9024695664506183370_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFJbETO1saewsRpYNQzSrJiz4kilq6qGoXPiSKWrqoahSvopRXBvHfodIG6I3-Wv4wVaV3wj48a2UyEgwdLtSpJ&_nc_ohc=hgCKe-x9XZgAX-WS6RJ&tn=rnyLt2z1nWI-t-dl&_nc_zt=23&_nc_ht=scontent.fabv3-1.fna&oh=00_AfDrwAu4KvBJaCc3imgEmAj1BL0evDJ-RqJVp4cVLxk3BQ&oe=63EEDDB1"
+          className="max-w-full rounded-xl  md:h-72   w-32 md:w-60 md:my-3   mx-auto my-2 "
+          src={mag2}
           alt="Margret Edeh"
         />
       </div>
