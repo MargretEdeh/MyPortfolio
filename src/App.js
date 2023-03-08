@@ -1,5 +1,5 @@
 import "./App.css";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 const Header = lazy(() => import("./components/Header"));
 const Home = lazy(() => import("./components/Home"));
 const Projects = lazy(() => import("./components/Projects"));
@@ -15,6 +15,10 @@ const Repos = lazy(() => import("./components/Repos"));
 // import Footer from './components/Footer';
 // import Blog from './components/Blog';
 function App() {
+  const [showContact, setShowContact] = useState(false);
+  const toogleContact = () => {
+    setShowContact(!showContact);
+  }
   return (
     <div className="  mx-auto max-w-full  ">
       <Suspense
@@ -25,8 +29,8 @@ function App() {
           
         }
       >
-        <Header />
-        <Home />
+        <Header showContact={showContact} setShowContact={setShowContact} toogleContact={toogleContact} />
+        <Home showContact={showContact} setShowContact={setShowContact} toogleContact={toogleContact} />
         <AboutMe />
         <Projects />
         <Blog />

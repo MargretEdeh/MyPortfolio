@@ -7,10 +7,9 @@ import 'aos/dist/aos.css';
 import Aos from "aos"
 import TheModal from "./TheModal";
 
-export default function Header() {
-  const [showContact, setShowContact] = React.useState(false);
-  const toogleContact = () => {
-    setShowContact(!showContact);
+export default function Header({showContact, toogleContact, setShowContact} ) {
+  const hire = ()=>{
+    setShowContact(true)
   }
   useEffect(()=>{
     Aos.init({duration:2000})
@@ -55,7 +54,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <button onClick={toogleContact} className="p-4 mx-3 mb-5 bg-gradient-to-r from-pink-600 to-pink-900 rounded-xl text-white font-semibold md:hidden ">
+            <button onClick={ hire} className="p-4 mx-3 mb-5 bg-gradient-to-r from-pink-600 to-pink-900 rounded-xl text-white font-semibold md:hidden ">
               Contact Me
             </button>
           </li>

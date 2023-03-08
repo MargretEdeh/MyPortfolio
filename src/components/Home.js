@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Tools from "./Tools";
-import mag from "../assets/mag.jpg"
+// import mag from "../assets/mag.jpg"
 import mag2 from "../assets/mag2.jpg"
 
 import 'aos/dist/aos.css';
@@ -14,7 +14,7 @@ import Aos from "aos"
 // import { FaGitAlt } from 'react-icons/fa';
 // import { FaNpm } from 'react-icons/fa';
 
-export default function Home() {
+export default function Home({showContact, toogleContact, setShowContact}) {
   useEffect(()=>{
     Aos.init({duration: 2000})
   })
@@ -40,7 +40,7 @@ export default function Home() {
           I am a FrontEnd Developer and a Technical Writer with over 12 months
           of experience{" "}
         </p>
-        <button  className="bg-gradient-to-r from-pink-500 to-pink-700 rounded-2xl w-40 mb-10  hover:animate-bounce duration-100 text-white font-semibold p-4">
+        <button onClick={toogleContact}  className="bg-gradient-to-r from-pink-500 to-pink-700 rounded-2xl w-40 mb-10  hover:animate-bounce duration-100 text-white font-semibold p-4">
           Hire Me
         </button>
         <div className="  grid-cols-2 inline-grid md:grid-cols-3 mt-1" >

@@ -70,7 +70,7 @@ export default function TheModal({ showContact }) {
     theRef.current.focus();
   };
   return (
-    <div className="fixed w-full z-[50] h-screen font-semibold bg-pink-600 opacity-90 top-0 -ml-0 md:-ml-6">
+    <div className="fixed w-full z-[50] h-screen font-semibold bg-pink-600 opacity-90 top-0 -ml-0">
       <FaTimes
         onClick={showContact}
         className="text-4xl text-slate-900 m-10 hover:text-5xl"
