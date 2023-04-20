@@ -1,3 +1,100 @@
+.swiper-container {
+  width: 60%;
+  height: 50%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Styles for the slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Styles for the slide images */
+ img {
+  display: block;
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.swiper-slide-active {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the previous and next slides */
+.swiper-slide-prev, .swiper-slide-next {
+  transform: scale(0.95);
+  z-index: 9;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  color: #eb5cb4 !important;
+}
+
+
+/* Styles for the pagination bullets */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #eb5cb4 !important;
+  margin-bottom: 16em !important;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Styles for the active pagination bullet */
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* Styles for the navigation buttons */
+.swiper-button-prev, .swiper-button-next {
+  /* color: #fff; */
+  /* background-color: #333; */
+  border-radius: 50%;
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  /* left: -1em !important; */
+  position: absolute;
+  top: 40% !important;
+  transform: translateY(-50%);
+  z-index: 11;
+  color: #eb5cb4 !important;
+
+}
+
+/* Styles for the navigation buttons on hover */
+/* .swiper-button-prev .swiper-button-next {
+  background-color: #000;
+  margin-top: 30em;
+} */
+
+/* Styles for the navigation buttons icons */
+/* .swiper-button-prev::after, .swiper-button-next::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+/* Styles for the scrollbar draggable handle on hover */
+.swiper-scrollbar-draggable:hover {
+  opacity: 1;
+}
+
+
 /* .App {
   text-align: center;
 }

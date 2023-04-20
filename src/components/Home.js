@@ -47,9 +47,12 @@ export default function Home({showContact, toogleContact, setShowContact}) {
         <Tools name="React" logo={<img src="https://img.icons8.com/color/48/000000/react-native.png" alt="react"/>}/>
       <Tools name="HTML5" logo={<img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="html5"/>}/>
       <Tools name="CSS3" logo={<img src="https://img.icons8.com/color/48/000000/css3.png" alt="css3"/>}/>
-      <Tools name="JS" logo={<img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="javascript"/>}/>
+      <Tools name="JavaScript" logo={<img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="javascript"/>}/>
       <Tools name="Git" logo={<img src="https://img.icons8.com/color/48/000000/git.png" alt="git"/>}/>
       <Tools name="Vue" logo={<img src="https://img.icons8.com/color/48/000000/vue-js.png" alt="vue"/>}/>
+      <Tools name="Tailwind" logo={<img src="https://play-lh.googleusercontent.com/YN4OEsoWsU1QrZFcwWlI8uuGhDKc4RAlP56FFyL03VFegD5tWjZ5cNWHocC_QRE_TvA=w240-h480-rw" alt="tailwind"/>}/>
+      <Tools name="TypeScript" logo={<img src="https://img.icons8.com/color/48/000000/typescript.png" alt="typescript"/>}/>
+      <Tools name="NextJs" logo={<img src="https://files.raycast.com/4dnlt8m2mcb98bzc4zb8pggc4csi" alt="next"/>}/>
       </div>
       </div>
     </div>
